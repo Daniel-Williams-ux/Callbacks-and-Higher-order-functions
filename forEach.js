@@ -30,3 +30,24 @@ console.log(typeof forEach); // should log: 'function'
 forEach(['a','b','c'], i => console.log(i)); // should log: 'a', 'b', 'c'
 console.log(typeof map); // should log: 'function'
 console.log(map([3,4,5], n => n - 2)); // should log: [1, 2, 3]
+
+
+//using arrow function
+const forEach = (array, callback) => {
+  for (let i = 0; i < array.length; i++) {
+  callback(array[i]);
+  }
+}
+
+const map = (array, callback) => {
+  let output = [];
+  array.forEach(element => {
+    const newArr = callback(element);
+    output.push(newArr);
+  })
+  return output;
+}
+console.log(typeof forEach); // should log: 'function'
+forEach(['a','b','c'], i => console.log(i)); // should log: 'a', 'b', 'c'
+console.log(typeof map); // should log: 'function'
+console.log(map([3,4,5], n => n - 2)); // should log: [1, 2, 3]
